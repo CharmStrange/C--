@@ -15,17 +15,18 @@
 using namespace std;
 
 class PLAYER_SAVE;
-vector<PLAYER_SAVE> PLAYER_SAVES;
 
-// [ Contianer ] : Player saves
+// [Container]: Player saves
 class PLAYER_SAVE {
 private:
-    US player_saves;
-
-public:
+    static vector<PLAYER_SAVE> PLAYER_SAVES;
     static US number_of_player_saves;
 
-    PLAYER_SAVE() : player_saves(number_of_player_saves++) {
+    US player_save_id;
+    string save_data;
+
+public:
+    PLAYER_SAVE(const string& data) : player_save_id(number_of_player_saves++), save_data(data) {
         // If the container is full, remove the oldest save
         if (PLAYER_SAVES.size() == MAX_SAVES) {
             PLAYER_SAVES.erase(PLAYER_SAVES.begin());
@@ -33,7 +34,20 @@ public:
         PLAYER_SAVES.push_back(*this);
     }
 
+    static void display_saves() {
+        cout << "[ Player Save ] : [";
+        for (const auto& player_save : PLAYER_SAVES) {
+            cout << player_save.save_data;
+            if (&player_save != &PLAYER_SAVES.back()) {
+                cout << ", ";
+            }
+        }
+        cout << "]" << endl;
+    }
+
     ~PLAYER_SAVE() {}
+
+    friend class PLAYER_LOG;
 };
 
 // [ Container ] : player log
