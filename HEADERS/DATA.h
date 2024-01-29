@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// NPC 목록
+// NPCs
 vector<string> industrialZoneNPCs = {
     "Factory Foreman",
     "Innovative Engineer",
@@ -63,7 +63,7 @@ vector<string> peacefulVillageNPCs = {
     "Cheerful Tavern Bard"
 };
 
-// 엔티티 목록
+// Entities
 vector<string> industrialZoneEntities = {
     "Efficient Worker Drone",
     "Mechanical Assembly Line Guardian",
@@ -119,7 +119,7 @@ vector<string> peacefulVillageEntities = {
     "Musical Harmony Muse"
 };
 
-// 직업 목록
+// Jobs
 vector<string> industrialZoneJobs = {
     "Industrial Engineer",
     "Robotics Specialist",
