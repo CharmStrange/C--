@@ -116,4 +116,24 @@ struct Entity_hostile {
     US Wariness;
 };
 
+vector<Entity_friendly> FriendlyEntity; // extern?
+vector<Entity_neutral> NeutralEntity; // extern?
+vector<Entity_hostile> HostileEntity; // extern?
+
+// Entity Adder
+void add_Entity_friendly(const string& Name, US Type, UC Level, US Health, US Energy, US Defense, US Power, US Dexterity, US Intelligence, US Wariness) {
+    Entity_friendly entity = {Name, Type, Level, Health, Energy, Defense, Power, Dexterity, Intelligence, Wariness};
+    FriendlyEntity.push_back(entity);
+}
+
+void add_Entity_neutral(const string& Name, US Type, UC Level, US Health, US Energy, US Defense, US Power, US Dexterity, US Intelligence, US Wariness) {
+    Entity_neutral entity = {Name, Type, Level, Health, Energy, Defense, Power, Dexterity, Intelligence, Wariness};
+    NeutralEntity.push_back(entity);
+}
+
+void add_Entity_hostile(const string& Name, US Type, UC Level, US Health, US Energy, US Defense, US Power, US Dexterity, US Intelligence, US Wariness) {
+    Entity_hostile entity = {Name, Type, Level, Health, Energy, Defense, Power, Dexterity, Intelligence, Wariness};
+    HostileEntity.push_back(entity);
+}
+
 #endif
