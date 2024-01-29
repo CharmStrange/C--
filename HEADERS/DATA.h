@@ -7,124 +7,168 @@
 
 using namespace std;
 
-// List of user-selectable jobs combining elements of history, imagination, mythology, fantasy, reality, machinery, animals, nature, space, horror, fantasy, the inexplicable, riddles, ghost stories, the future, and fictitious facts.
-vector<string> userSelectableJobs = {
-    "Time Traveling Archaeologist",
-    "Dream Weaver",
-    "Mythical Creature Trainer",
-    "Reality Bender",
-    "Steampunk Engineer",
-    "Cosmic Navigator",
-    "Beast Whisperer",
-    "Nature's Alchemist",
-    "Astronaut Sorcerer",
-    "Fear Architect",
-    "Imagination Sculptor",
-    "Enigma Detective",
-    "Invisible Illusionist",
-    "Riddle Solver",
-    "Ghost Story Archaeologist",
-    "Futuristic Storyteller",
-    "Unicorn Rancher",
-    "Parallel Universe Cartographer",
-    "Nightmare Technician",
-    "Infinite Possibility Explorer"
+// NPC 목록
+vector<string> industrialZoneNPCs = {
+    "Factory Foreman",
+    "Innovative Engineer",
+    "Industrial Inventor",
+    "Efficient Assembly Line Supervisor",
+    "Tech-Savvy Machinist",
+    "Robotics Technician",
+    "Environmental Compliance Officer",
+    "Supply Chain Coordinator",
+    "Safety Inspector",
+    "Ingenious Maintenance Crew",
+    "Logistics Manager",
+    "Efficiency Consultant",
+    "Automation Specialist",
+    "Materials Procurement Expert",
+    "Power Plant Operator"
 };
 
-// List of NPCs with whom the user can interact, blending elements of history, imagination, mythology, fantasy, reality, machinery, animals, nature, space, horror, fantasy, the inexplicable, riddles, ghost stories, the future, and fictitious facts.
-vector<string> interactableNPCs = {
-    "Wandering Time Sage",
-    "Illusionary Bard",
-    "Mythical Tavern Keeper",
-    "Quantum Reality Observer",
-    "Steam-powered Robot Companion",
-    "Celestial Beast Guide",
-    "Whimsical Nature Spirit",
-    "Galactic Oracle",
-    "Horror Enigma Merchant",
-    "Fantasy Artisan",
-    "Mysterious Sphinx",
-    "Invisible Ghost Whisperer",
-    "Riddle-solving Poltergeist",
-    "Dream Eater",
-    "Time-Traveling Phantom",
-    "Future Archaeologist",
-    "AI-powered Unicorn Companion",
-    "Interdimensional Storyteller",
-    "Fear-Inducing Shadow Being",
-    "Living Enigma Puzzle"
+vector<string> desolateAreaNPCs = {
+    "Lonely Wanderer",
+    "Survivalist Nomad",
+    "Ruins Historian",
+    "Post-Apocalyptic Trader",
+    "Radiation Biologist",
+    "Scavenger Leader",
+    "Mutant Creature Tracker",
+    "Desolation Cartographer",
+    "Waste Disposal Engineer",
+    "Lost Expedition Guide",
+    "Abandoned Facility Historian",
+    "Toxic Atmosphere Scout",
+    "Ruin Archaeologist",
+    "Sandstorm Tracker",
+    "Barren Landscape Artist"
 };
 
-// List of friendly entities inspired by history, imagination, mythology, fantasy, reality, machinery, animals, nature, space, horror, fantasy, the inexplicable, riddles, ghost stories, the future, and fictitious facts.
-vector<string> friendlyEntities = {
-    "Ancient Guardian Spirit",
-    "Dreamland Fairy",
-    "Wisdom-infused Griffin",
-    "Reality-defying Robot Companion",
-    "Friendly Time Traveler",
-    "Cosmic Butterfly",
-    "Whimsical Forest Elemental",
-    "Wise Nebula Spirit",
-    "Space-hopping Bunny",
-    "Courageous Horror-fighting Companion",
-    "Imaginary Friend",
-    "Enigmatic Guardian Sphinx",
-    "Invisible Ally",
-    "Riddle-solving Ghost Companion",
-    "Dream Protector",
-    "Future-friendly Extraterrestrial",
-    "Kind-hearted AI Unicorn",
-    "Parallel Universe Ally",
-    "Joyful Nightmare Defender",
-    "Riddle-solving Mythical Being"
+vector<string> peacefulVillageNPCs = {
+    "Friendly Innkeeper",
+    "Local Farmer",
+    "Village Healer",
+    "Town Historian",
+    "Caring School Teacher",
+    "Artisan Craftsman",
+    "Community Gardener",
+    "Harmony Musician",
+    "Peacekeeping Constable",
+    "Festive Event Organizer",
+    "Kindhearted Librarian",
+    "Friendly Animal Breeder",
+    "Sustainable Energy Pioneer",
+    "Community Builder",
+    "Local Chef",
+    "Cheerful Tavern Bard"
 };
 
-// List of neutral entities inspired by history, imagination, mythology, fantasy, reality, machinery, animals, nature, space, horror, fantasy, the inexplicable, riddles, ghost stories, the future, and fictitious facts.
-vector<string> neutralEntities = {
-    "Ancient Relic Guardian",
-    "Illusory Chameleon",
-    "Mystical Traveling Merchant",
-    "Quantum Observer Drone",
-    "Clockwork Owl Companion",
-    "Astral Wanderer",
-    "Elemental Balance Keeper",
-    "Star Gazer",
-    "Interdimensional Nomad Fox",
-    "Enigmatic Library Guardian",
-    "Imagination Collector",
-    "Sphinx's Riddle Guardian",
-    "Invisible Watcher",
-    "Riddle Master Ghost",
-    "Dream Guide",
-    "Time-warping Explorer",
-    "AI Unicorn Observer",
-    "Interdimensional Nomad",
-    "Shadow Realm Watcher",
-    "Mysterious Puzzle Keeper"
+// 엔티티 목록
+vector<string> industrialZoneEntities = {
+    "Efficient Worker Drone",
+    "Mechanical Assembly Line Guardian",
+    "Innovative Prototype Robot",
+    "Automated Industrial Sentinel",
+    "Technological Waste Golem",
+    "Factory Spirit of Innovation",
+    "Pollution-absorbing Bioengineered Plant",
+    "Mechanical Efficiency Elemental",
+    "Metallic Energy Sprite",
+    "Inventive Steam-powered Companion",
+    "Robotic Assembly Line Entertainer",
+    "Factory Guardian Golem",
+    "AI-controlled Industrial Drone",
+    "Efficiency-focused Nanobot Swarm",
+    "Sustainable Energy Elemental"
 };
 
-// List of hostile entities inspired by history, imagination, mythology, fantasy, reality, machinery, animals, nature, space, horror, fantasy, the inexplicable, riddles, ghost stories, the future, and fictitious facts.
-vector<string> hostileEntities = {
-    "Temporal Anomaly Hunter",
-    "Nightmare Harbinger",
-    "Mythical Beast Hunter",
-    "Reality-warping Trickster",
-    "Steampunk Arachnid Mechanism",
-    "Galactic Shadow Stalker",
-    "Nature's Vengeful Spirit",
-    "Cosmic Chaos Bringer",
-    "Horror-inducing Specter",
-    "Illusion Shatterer",
-    "Nightmarish Puppeteer",
-    "Invisible Phantom Menace",
-    "Riddle-twisting Poltergeist",
-    "Dream Eater Nightmare",
-    "Time-bending Spectral Assassin",
-    "Future Archaeological Saboteur",
-    "Malevolent AI Unicorn",
-    "Interdimensional Menace",
-    "Fear-eating Shadow Beast",
-    "Riddle-spewing Dark Entity"
+vector<string> desolateAreaEntities = {
+    "Mutated Wildlife",
+    "Radiation-resistant Flora",
+    "Post-Apocalyptic Specter",
+    "Desert Nomad's Spirit Guide",
+    "Abandoned Facility Ghost",
+    "Wasteland Golem",
+    "Toxic Atmosphere Elemental",
+    "Ruins Guardian Phantom",
+    "Scavenger's Companion Beast",
+    "Lost Expedition Ghost",
+    "Sandstorm Elemental",
+    "Lonely Wanderer's Shadow",
+    "Mystical Mutant Creature",
+    "Survivor's Ghostly Ally",
+    "Radiation-resistant Plant Elemental"
+};
+
+vector<string> peacefulVillageEntities = {
+    "Village Guardian Spirit",
+    "Harmonious Nature Elemental",
+    "Festive Event Spirit",
+    "Caring School Mascot Creature",
+    "Local Animal Companion",
+    "Peaceful Garden Elemental",
+    "Community Harmony Golem",
+    "Sustainable Energy Elemental",
+    "Kindhearted Librarian's Spirit Guide",
+    "Cheerful Tavern Elemental",
+    "Friendly Inn's Hearth Spirit",
+    "Artisan Craftsman's Muse",
+    "Friendly Animal Companion",
+    "Community Building Elemental",
+    "Village Chef's Culinary Spirit",
+    "Musical Harmony Muse"
+};
+
+// 직업 목록
+vector<string> industrialZoneJobs = {
+    "Industrial Engineer",
+    "Robotics Specialist",
+    "Factory Manager",
+    "Logistics Coordinator",
+    "Efficiency Consultant",
+    "Environmental Compliance Officer",
+    "Supply Chain Analyst",
+    "Automation Technician",
+    "Materials Procurement Specialist",
+    "Power Plant Operator",
+    "Maintenance Crew",
+    "Efficient Assembly Line Worker",
+    "Tech-Savvy Machinist",
+    "Innovative Inventor"
+};
+
+vector<string> desolateAreaJobs = {
+    "Wasteland Survivalist",
+    "Radiation Biologist",
+    "Scavenger Leader",
+    "Desolation Cartographer",
+    "Lost Expedition Guide",
+    "Toxic Atmosphere Scout",
+    "Ruins Archaeologist",
+    "Post-Apocalyptic Trader",
+    "Waste Disposal Engineer",
+    "Sandstorm Tracker",
+    "Abandoned Facility Historian",
+    "Mutant Creature Tracker",
+    "Lonely Wanderer"
+};
+
+vector<string> peacefulVillageJobs = {
+    "Local Farmer",
+    "Village Healer",
+    "Caring School Teacher",
+    "Artisan Craftsman",
+    "Community Gardener",
+    "Harmony Musician",
+    "Peacekeeping Constable",
+    "Festive Event Organizer",
+    "Kindhearted Librarian",
+    "Friendly Animal Breeder",
+    "Sustainable Energy Pioneer",
+    "Community Builder",
+    "Local Chef",
+    "Cheerful Tavern Bard",
+    "Innkeeper"
 };
 
 #endif
