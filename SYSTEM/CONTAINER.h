@@ -12,6 +12,7 @@
 # include <string>
 # include <deque>  // Using deque for easy insertion and removal at both ends
 # include <vector>
+# include <map>
 
 using namespace std;
 
@@ -76,7 +77,9 @@ public:
     ~PLAYER_LOG() {}
 };
 
-// [ Container ] : maps
-
+// [ Container ] : regions
+    
+// [ Container ] : items
+    
 
 #endif
