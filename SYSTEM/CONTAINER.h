@@ -76,38 +76,4 @@ public:
     ~PLAYER_LOG() {}
 };
 
-// [ Container ] : Entities
-struct Entity {
-    string Name;
-    US Type;
-    UC Level;
-    US Health;
-    US Energy;
-    US Defense;
-    US Power;
-    US Dexterity;
-    US Intelligence;
-    US Wariness;
-};
-
-vector<Entity> FriendlyEntity; // extern?
-vector<Entity> NeutralEntity; // extern?
-vector<Entity> HostileEntity; // extern?
-
-// Entity Adder
-void add_Entity_friendly(const string& Name, US Type, UC Level, US Health, US Energy, US Defense, US Power, US Dexterity, US Intelligence, US Wariness) {
-    Entity entity = {Name, Type, Level, Health, Energy, Defense, Power, Dexterity, Intelligence, Wariness};
-    FriendlyEntity.push_back(entity);
-}
-
-void add_Entity_neutral(const string& Name, US Type, UC Level, US Health, US Energy, US Defense, US Power, US Dexterity, US Intelligence, US Wariness) {
-    Entity entity = {Name, Type, Level, Health, Energy, Defense, Power, Dexterity, Intelligence, Wariness};
-    NeutralEntity.push_back(entity);
-}
-
-void add_Entity_hostile(const string& Name, US Type, UC Level, US Health, US Energy, US Defense, US Power, US Dexterity, US Intelligence, US Wariness) {
-    Entity entity = {Name, Type, Level, Health, Energy, Defense, Power, Dexterity, Intelligence, Wariness};
-    HostileEntity.push_back(entity);
-}
-
 #endif
