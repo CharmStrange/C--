@@ -16,9 +16,8 @@
 
 using namespace std;
 
-class PLAYER_SAVE;
-
 // [Container]: Player saves
+class PLAYER_SAVE;
 class PLAYER_SAVE {
 private:
     static vector<PLAYER_SAVE> PLAYER_SAVES;
@@ -79,7 +78,21 @@ public:
 
 // [ Container ] : regions
     
-// [ Container ] : items
-    
+
+// [ Container ] : items / player inventory
+struct Item_Structure {
+    string Name;
+    US lbs;
+    UC Type;
+};
+
+map<ID, Item_Structure> ITEM_LIST; // extern?
+
+class INVENTORY {
+public:
+    INVENTORY() = default;
+
+    ~INVENTORY() {}
+}
 
 #endif
