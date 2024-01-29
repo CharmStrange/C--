@@ -2,7 +2,8 @@
 # define CONTAINER_H
 
 // MACROS
-# define US unsigned short
+# define UC unsigned char // 1B, 0~255
+# define US unsigned short // 2B, 0~65535 
 # define MAX_SAVES 3
 # define MAX_LOGS 10
 
@@ -50,7 +51,7 @@ public:
     friend class PLAYER_LOG;
 };
 
-// [ Container ] : player log
+// [ Container ] : player logs
 class PLAYER_LOG {
 public:
     PLAYER_LOG() = default;
@@ -73,6 +74,46 @@ public:
     }
 
     ~PLAYER_LOG() {}
+};
+
+// [ Container ] : Entities
+struct Entity_friendly {
+    string Name;
+    US Type;
+    UC Level;
+    US Health;
+    US Energy;
+    US Defense;
+    US Power;
+    US Dexterity;
+    US Intelligence;
+    US Wariness;
+};
+
+struct Entity_neutral {
+    string Name;
+    US Type;
+    UC Level;
+    US Health;
+    US Energy;
+    US Defense;
+    US Power;
+    US Dexterity;
+    US Intelligence;
+    US Wariness;
+};
+
+struct Entity_hostile {
+    string Name;
+    US Type;
+    UC Level;
+    US Health;
+    US Energy;
+    US Defense;
+    US Power;
+    US Dexterity;
+    US Intelligence;
+    US Wariness;
 };
 
 #endif
