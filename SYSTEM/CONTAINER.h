@@ -86,7 +86,7 @@ struct Item_Structure {
     UC Type;
 };
 
-map<ID, Item_Structure> ITEM_LIST; // extern?
+map<UC, Item_Structure> ITEM_LIST; // extern?
 
 class INVENTORY {
 public:
