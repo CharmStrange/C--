@@ -93,6 +93,6 @@ public:
     INVENTORY() = default;
 
     ~INVENTORY() {}
-}
+};
 
 #endif
