@@ -90,7 +90,15 @@ map<UC, Item_Structure> ITEM_LIST; // extern?
 
 class INVENTORY {
 public:
-    INVENTORY() = default;
+    UC inventory_lbs;
+    US inventory_size = 30;
+
+    // Container in class
+    vector<???> Inventory;
+
+    INVENTORY() {
+        Inventory.resize(inventory_size);
+    };
 
     ~INVENTORY() {}
 };
