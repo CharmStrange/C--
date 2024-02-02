@@ -13,13 +13,10 @@
 # include <deque>  // Using deque for easy insertion and removal at both ends
 # include <vector>
 # include <map>
-<<<<<<< HEAD
 
 // Other HEADERS
 # include "ENTITY.h"
 # include "ITEMS.h"
-=======
->>>>>>> 3da4d4f27f7c3f75e95fc36d44da4f535a173380
 
 using namespace std;
 
@@ -87,41 +84,25 @@ public:
     
 
 // [ Container ] : items / player inventory
-<<<<<<< HEAD
-=======
-struct Item_Structure {
-    string Name;
-    US lbs;
-    UC Type;
-};
-
-map<UC, Item_Structure> ITEM_LIST; // extern?
-
->>>>>>> 3da4d4f27f7c3f75e95fc36d44da4f535a173380
 class INVENTORY {
 public:
     UC inventory_lbs;
     US inventory_size = 30;
 
     // Container in class
-<<<<<<< HEAD
     vector<Item_Structure> Inventory;
-=======
-    vector<???> Inventory;
->>>>>>> 3da4d4f27f7c3f75e95fc36d44da4f535a173380
 
     INVENTORY() {
         Inventory.resize(inventory_size);
     };
 
-<<<<<<< HEAD
     void add_ITEMS(const map<UC, Item_Structure>& itemsMap, vector<Item_Structure>& itemsVector, UC itemId) {
             auto it = itemsMap.find(itemId);
 
             if (it != itemsMap.end()) {
                 itemsVector.push_back(it->second);
             } else {
-                cout << "Item with ID " << static_cast<int>(itemId) << " not found in the map." << endl;
+                cout << "Item with ID " << static_cast<UC>(itemId) << " not found in the map." << endl;
             }   
     }
 
@@ -129,9 +110,3 @@ public:
 };
 
 #endif
-=======
-    ~INVENTORY() {}
-};
-
-#endif
->>>>>>> 3da4d4f27f7c3f75e95fc36d44da4f535a173380

@@ -173,8 +173,4 @@ vector<string> peacefulVillageJobs = {
 };
 */
 
-<<<<<<< HEAD
 #endif
-=======
-#endif
->>>>>>> 3da4d4f27f7c3f75e95fc36d44da4f535a173380
