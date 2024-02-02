@@ -31,4 +31,8 @@ int main() {
 
    PLAYER_SAVE c("Cc");
    c.display_saves();
+
+   INVENTORY inv;
+   inv.add_ITEMS(healingItemsMap, inv.Inventory, 1);
+
 }

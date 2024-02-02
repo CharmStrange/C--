@@ -2,7 +2,8 @@
 # define CONTAINER_H
 
 // MACROS
-# define US unsigned short
+# define UC unsigned char // 1B, 0~255
+# define US unsigned short // 2B, 0~65535 
 # define MAX_SAVES 3
 # define MAX_LOGS 10
 
@@ -11,12 +12,16 @@
 # include <string>
 # include <deque>  // Using deque for easy insertion and removal at both ends
 # include <vector>
+# include <map>
+
+// Other HEADERS
+# include "ENTITY.h"
+# include "ITEMS.h"
 
 using namespace std;
 
-class PLAYER_SAVE;
-
 // [Container]: Player saves
+class PLAYER_SAVE;
 class PLAYER_SAVE {
 private:
     static vector<PLAYER_SAVE> PLAYER_SAVES;
@@ -50,7 +55,7 @@ public:
     friend class PLAYER_LOG;
 };
 
-// [ Container ] : player log
+// [ Container ] : player logs
 class PLAYER_LOG {
 public:
     PLAYER_LOG() = default;
@@ -73,6 +78,35 @@ public:
     }
 
     ~PLAYER_LOG() {}
+};
+
+// [ Container ] : regions
+    
+
+// [ Container ] : items / player inventory
+class INVENTORY {
+public:
+    UC inventory_lbs;
+    US inventory_size = 30;
+
+    // Container in class
+    vector<Item_Structure> Inventory;
+
+    INVENTORY() {
+        Inventory.resize(inventory_size);
+    };
+
+    void add_ITEMS(const map<UC, Item_Structure>& itemsMap, vector<Item_Structure>& itemsVector, UC itemId) {
+            auto it = itemsMap.find(itemId);
+
+            if (it != itemsMap.end()) {
+                itemsVector.push_back(it->second);
+            } else {
+                cout << "Item with ID " << static_cast<int>(itemId) << " not found in the map." << endl;
+            }   
+    }
+
+    ~INVENTORY() {}
 };
 
 #endif
