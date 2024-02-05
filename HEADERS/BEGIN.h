@@ -67,7 +67,9 @@ void user_start(char alphabet) {
     }
 }
 
-void 
+void KEEP_PLAYING() {
+    
+}
 
 void CREDIT_SCREEN() {
     cout << "Developer : CharmStrange / Intelligence Utility" << endl;
