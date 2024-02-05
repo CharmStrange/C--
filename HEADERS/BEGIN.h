@@ -13,6 +13,7 @@ using namespace std;
 unsigned char start_value;
 
 void START_SCREEN(); // Forward Declaration
+
 void RUN_BEGIN() {
     cout << "Welcome, this is 'Game Title'. Try various functions of 'Game Title' and take what you want.\n" << endl;
     do { START_SCREEN(); } while (start_value == 1);
@@ -20,6 +21,8 @@ void RUN_BEGIN() {
 
 // process functions
 void user_start(char alphabet); // Forward Declaration
+void CREDIT_SCREEN(); // Forward Declaration
+
 void START_SCREEN() {
     char alphabet;
 
@@ -37,26 +40,22 @@ void user_start(char alphabet) {
     switch (alphabet) {
         case 'N':
         //case 'n':
-
-            cout << "Starting a New Game..." << endl;
+            cout << "Starting a New Game...\n" << endl;
             // Add the logic for starting a new game
             start_value = 0;
             break;
             
         case 'K':
         //case 'k':
-
-            cout << "Keep Playing..." << endl;
+            cout << "Keep Playing...\n" << endl;
             // Add the logic for continuing the game
             start_value = 0;
             break;
             
         case 'C':
         //case 'c':
-
-            cout << "Credit..." << endl;
-            // Add the logic for displaying and handling options
-            start_value = 0;
+            cout << "Credit...\n" << endl;
+            CREDIT_SCREEN();
             break;
             
         case 'X':
@@ -68,8 +67,14 @@ void user_start(char alphabet) {
     }
 }
 
-void CREDIT_SCREEN() {
+void 
 
+void CREDIT_SCREEN() {
+    cout << "Developer : CharmStrange / Intelligence Utility" << endl;
+    cout << "Developing Language : C++" << endl;
+    cout << "Developing Period : 2024-01-24 ~ " << endl;
+    cout << "GitHub : https://github.com/CharmStrange" << endl;
+    cout << "(return to start page...)\n" << endl;
 }
 
 #endif
