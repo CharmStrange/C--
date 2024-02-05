@@ -4,8 +4,7 @@
 #include "HEADERS\BEGIN.h"
 #include "HEADERS\MAIN.h"
 #include "HEADERS\DATA.h"
-
-#include "SYSTEM\CONTAINER.h"
+#include "HEADERS\CONTAINER.h"
 
 using namespace std;
 
@@ -34,5 +33,7 @@ int main() {
 
    INVENTORY inv;
    inv.add_ITEMS(healingItemsMap, inv.Inventory, 1);
+
+   RUN_BEGIN();
 
 }
