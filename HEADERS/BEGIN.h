@@ -21,6 +21,8 @@ void RUN_BEGIN() {
 
 // process functions
 void user_start(char alphabet); // Forward Declaration
+void NEW_GAME(); // Forward Declaration
+void KEPP_PLAYING(); // Forward Declaration
 void CREDIT_SCREEN(); // Forward Declaration
 
 void START_SCREEN() {
@@ -40,9 +42,9 @@ void user_start(char alphabet) {
     switch (alphabet) {
         case 'N':
         //case 'n':
-            cout << "Starting a New Game...\n" << endl;
-            // Add the logic for starting a new game
+            cout << "Starting a New Game..." << endl;
             start_value = 0;
+            NEW_GAME();
             break;
             
         case 'K':
@@ -66,11 +68,23 @@ void user_start(char alphabet) {
             cout << "Invalid choice. Please choose [N], [K], or [O].\n" << endl;
     }
 }
+///  
+///
+///
+void NEW_GAME() {
+    string new_save_name;
+    cout << "Type player name :" << endl;
+    cin >> new_save_name;
+    PLAYER_SAVE NEW_ONE(new_save_name);
+    NEW_ONE.display_saves();
+}
 
 void KEEP_PLAYING() {
     
 }
-
+/// 
+///
+///
 void CREDIT_SCREEN() {
     cout << "Developer : CharmStrange / Intelligence Utility" << endl;
     cout << "Developing Language : C++" << endl;
