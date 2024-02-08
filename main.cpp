@@ -22,14 +22,6 @@ int main() {
     RUN_MAIN(); // "HEADERS\MAIN.h"
     RUN_DATA(); // "HEADERS\DATA.h"
     */
-   PLAYER_SAVE a("Aa");
-   a.display_saves();
-
-   PLAYER_SAVE b("Bb");
-   b.display_saves();
-
-   PLAYER_SAVE c("Cc");
-   c.display_saves();
 
    INVENTORY inv;
    inv.add_ITEMS(healingItemsMap, inv.Inventory, 1);
