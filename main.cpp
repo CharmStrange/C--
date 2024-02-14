@@ -23,6 +23,7 @@ int main() {
     RUN_DATA(); // "HEADERS\DATA.h"
     */
 
+    // Testing
    INVENTORY inv;
    inv.add_ITEMS(healingItemsMap, inv.Inventory, 1);
 
