@@ -6,6 +6,7 @@
 
 // other HEADERS
 # include "CONTAINER.h"
+# include "DATA.h"
 
 using namespace std;
 
@@ -73,10 +74,12 @@ void user_start(char alphabet) {
 ///
 void NEW_GAME() {
     string new_save_name;
-    cout << "Type player name :" << endl;
+    cout << "Type player name : ";
     cin >> new_save_name;
     PLAYER_SAVE NEW_ONE(new_save_name);
     NEW_ONE.display_saves();
+
+    SAVE_FILE_PROCESS(new_save_name);
 }
 
 void KEEP_PLAYING() {

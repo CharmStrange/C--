@@ -7,45 +7,48 @@
 # include <string>
 # include <vector>
 
-// other HEADERS
-# include "CONTAINER.h"
-
 using namespace std;
 
-//Write a new text file
-void NEW_SAVE_FILE(const string& filename, const vector<int>& numbers) {
+// Structure to hold player data
+struct PlayerData {
+    string name;
+    int level;
+    int experience;
+
+    // Constructor to initialize data with default values
+    PlayerData() : name(""), level(1), experience(1) {}
+};
+
+//Write a new text file with player data initialized to default values
+void NEW_SAVE_FILE(const string& filename, const string& playerName) {
     ofstream file(filename);
 
     if (file.is_open()) {
-        for (int number : numbers) {
-            file << number << endl;
-        }
+        PlayerData player;
+        player.name = playerName; // Set player name from user input
+        file << player.name << " " << player.level << " " << player.experience << endl;
         file.close();
-        cout << "Successful!" << endl;
     } else {
         cerr << "Writing Error!" << endl;
     }
 }
 
 // Variables from Text file
-vector<int> SAVE_DATA_FROM_FILE(const string& filename) {
-    vector<int> numbers;
+PlayerData SAVE_DATA_FROM_FILE(const string& filename) {
+    PlayerData player;
     ifstream file(filename);
 
     if (file.is_open()) {
-        int number;
-        while (file >> number) {
-            numbers.push_back(number);
-        }
+        file >> player.name >> player.level >> player.experience;
         file.close();
     } else {
         cerr << "Open Error!" << endl;
     }
 
-    return numbers;
+    return player;
 }
 
-// Read a text file
+// Read a text file and Print it
 void READ_DATA_FROM_FILE(const string& filename) {
     ifstream file(filename);
     if (file.is_open()) {
@@ -57,6 +60,16 @@ void READ_DATA_FROM_FILE(const string& filename) {
     } else {
         cerr << "Open Error!" << endl;
     }
+}
+
+void SAVE_FILE_PROCESS(const string& playerName) {
+    string save_file = "CHARACTER.txt";
+    NEW_SAVE_FILE(save_file, playerName);
+    PlayerData player = SAVE_DATA_FROM_FILE(save_file);
+
+    cout << "Player Name: " << player.name << endl;
+    cout << "Player Level: " << player.level << endl;
+    cout << "Player Experience: " << player.experience << endl;
 }
 
 #endif
