@@ -72,4 +72,24 @@ void SAVE_FILE_PROCESS(const string& playerName) {
     cout << "Player Experience: " << player.experience << endl;
 }
 
+// Read data from saved file or display an error message if the file doesn't exist
+void KEEP_PLAYING_SAVE() {
+    string save_file = "CHARACTER.txt";
+    ifstream file(save_file);
+
+    if (!file.is_open()) {
+        cerr << "There's no file!" << endl;
+        return;
+    }
+
+    PlayerData player;
+    file >> player.name >> player.level >> player.experience;
+    file.close();
+
+    cout << "Player Name: " << player.name << endl;
+    cout << "Player Level: " << player.level << endl;
+    cout << "Player Experience: " << player.experience << endl;
+}
+
+
 #endif

@@ -23,7 +23,7 @@ void RUN_BEGIN() {
 // process functions
 void user_start(char alphabet); // Forward Declaration
 void NEW_GAME(); // Forward Declaration
-void KEPP_PLAYING(); // Forward Declaration
+void KEEP_PLAYING(); // Forward Declaration
 void CREDIT_SCREEN(); // Forward Declaration
 
 void START_SCREEN() {
@@ -51,7 +51,7 @@ void user_start(char alphabet) {
         case 'K':
         //case 'k':
             cout << "Keep Playing...\n" << endl;
-            // Add the logic for continuing the game
+            KEEP_PLAYING();
             start_value = 0;
             break;
             
@@ -83,7 +83,7 @@ void NEW_GAME() {
 }
 
 void KEEP_PLAYING() {
-    
+    KEEP_PLAYING_SAVE();
 }
 /// 
 ///
