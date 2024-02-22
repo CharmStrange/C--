@@ -72,18 +72,25 @@ void user_start(char alphabet) {
 ///  
 ///
 ///
+
+// N
 void NEW_GAME() {
     string new_save_name;
     cout << "Type player name : ";
     cin >> new_save_name;
     PLAYER_SAVE NEW_ONE(new_save_name);
+
+    // display new player save
     NEW_ONE.display_saves();
 
     SAVE_FILE_PROCESS(new_save_name);
+    START_GAME();
 }
 
+// K
 void KEEP_PLAYING() {
     KEEP_PLAYING_SAVE();
+    START_GAME();
 }
 /// 
 ///

@@ -48,31 +48,18 @@ PlayerData SAVE_DATA_FROM_FILE(const string& filename) {
     return player;
 }
 
-// Read a text file and Print it
-void READ_DATA_FROM_FILE(const string& filename) {
-    ifstream file(filename);
-    if (file.is_open()) {
-        string line;
-        while (getline(file, line)) {
-            cout << line << endl;
-        }
-        file.close();
-    } else {
-        cerr << "Open Error!" << endl;
-    }
-}
-
+// N
 void SAVE_FILE_PROCESS(const string& playerName) {
     string save_file = "CHARACTER.txt";
     NEW_SAVE_FILE(save_file, playerName);
     PlayerData player = SAVE_DATA_FROM_FILE(save_file);
 
-    cout << "Player Name: " << player.name << endl;
+    cout << "\nPlayer Name: " << player.name << endl;
     cout << "Player Level: " << player.level << endl;
     cout << "Player Experience: " << player.experience << endl;
 }
 
-// Read data from saved file or display an error message if the file doesn't exist
+// K : Read data from saved file or display an error message if the file doesn't exist
 void KEEP_PLAYING_SAVE() {
     string save_file = "CHARACTER.txt";
     ifstream file(save_file);
@@ -86,9 +73,14 @@ void KEEP_PLAYING_SAVE() {
     file >> player.name >> player.level >> player.experience;
     file.close();
 
-    cout << "Player Name: " << player.name << endl;
+    cout << "\nPlayer Name: " << player.name << endl;
     cout << "Player Level: " << player.level << endl;
     cout << "Player Experience: " << player.experience << endl;
+}
+
+// 
+void START_GAME() {
+    cout << "\nThe game started." << endl;
 }
 
 
