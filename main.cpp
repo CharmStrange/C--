@@ -24,9 +24,8 @@ int main() {
     */
 
     // Testing
-   INVENTORY inv;
-   inv.add_ITEMS(healingItemsMap, inv.Inventory, 1);
+    //INVENTORY inv;
+    //inv.add_ITEMS(healingItemsMap, inv.Inventory, 1);
 
-   RUN_BEGIN();
-
+    RUN_BEGIN();
 }
