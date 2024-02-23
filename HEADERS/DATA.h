@@ -6,6 +6,7 @@
 # include <fstream>
 # include <string>
 # include <vector>
+# include "BEGIN.h"
 
 using namespace std;
 
@@ -77,11 +78,5 @@ void KEEP_PLAYING_SAVE() {
     cout << "Player Level: " << player.level << endl;
     cout << "Player Experience: " << player.experience << endl;
 }
-
-// 
-void START_GAME() {
-    cout << "\nThe game started." << endl;
-}
-
 
 #endif

@@ -63,6 +63,7 @@ void user_start(char alphabet) {
             
         case 'X':
         //case 'x':
+            cout << "...Bye" << endl;
             exit(0);
             
         default:
@@ -72,6 +73,10 @@ void user_start(char alphabet) {
 ///  
 ///
 ///
+
+void START_GAME() {
+    cout << "\nThe game started." << endl;
+}
 
 // N
 void NEW_GAME() {
