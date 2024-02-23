@@ -47,6 +47,8 @@
         "xutility": "cpp",
         "deque": "cpp",
         "xtree": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "thread": "cpp",
+        "mutex": "cpp"
     }
 }

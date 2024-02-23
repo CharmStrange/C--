@@ -79,4 +79,14 @@ void KEEP_PLAYING_SAVE() {
     cout << "Player Experience: " << player.experience << endl;
 }
 
+///
+///
+///
+
+void Are_You_Sure() {
+    unsigned short A = 0;
+    cout << "Enter '1' to end this process : ";
+    cin >> A;
+}
+
 #endif

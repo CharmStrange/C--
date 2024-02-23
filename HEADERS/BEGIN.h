@@ -7,6 +7,7 @@
 // other HEADERS
 # include "CONTAINER.h"
 # include "DATA.h"
+# include "GAME_ALGORITHM.h"
 
 using namespace std;
 
@@ -63,6 +64,7 @@ void user_start(char alphabet) {
             
         case 'X':
         //case 'x':
+            Are_You_Sure();
             cout << "...Bye" << endl;
             exit(0);
             
@@ -75,6 +77,7 @@ void user_start(char alphabet) {
 ///
 
 void START_GAME() {
+    // use GAME_ALGORITHM.h
     cout << "\nThe game started." << endl;
 }
 
