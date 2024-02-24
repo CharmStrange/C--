@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// BEGIN.h
 void CHOOOSE_JOB() {
     unsigned short A;
     cout << "There are 3 regions, 'Industrial Zone', 'Desolate Area', 'Peaceful Village'." << endl;
@@ -31,6 +32,19 @@ void CHOOOSE_JOB() {
             cout << "\n" << index << endl;
         }
     }
+
+}
+
+void SET_STATS() {
+
+}
+
+void compare_stats() {
+
+}
+
+// MAIN.h
+void GAME_PROCESS() {
 
 }
 
