@@ -3,6 +3,9 @@
 
 # include <iostream>
 # include <string>
+# include <random>
+# include <ctime>
+
 # include "JOBS.h"
 
 using namespace std;
@@ -14,6 +17,18 @@ unsigned short job;
 string chosen_job;
 
 unsigned short ENTITY_region;
+
+string Randomizer(const vector<string>& string_container) {
+    mt19937 rng(time(nullptr));
+    uniform_int_distribution<int> dist(0, string_container.size() - 1);
+
+    unsigned short Random_Index = dist(rng);
+    return string_container[Random_Index];
+}
+
+// F.D.
+void spawn_NPC();
+void spawn_ENTITY();
 
 // BEGIN.h
 void INITIALIZE_SET() {
@@ -29,6 +44,9 @@ void INITIALIZE_SET() {
         for (const string& index : industrialZoneJobs) {
             cout << "\n" << index << endl;
         }
+
+        spawn_NPC();
+        spawn_ENTITY();
     }
 
     else if (region == 2) {
@@ -38,6 +56,9 @@ void INITIALIZE_SET() {
         for (const string& index : desolateAreaJobs) {
             cout << "\n" << index << endl;
         }
+
+        spawn_NPC();
+        spawn_ENTITY();
     }
 
     else {
@@ -47,12 +68,53 @@ void INITIALIZE_SET() {
         for (const string& index : peacefulVillageJobs) {
             cout << "\n" << index << endl;
         }
+
+        spawn_NPC();
+        spawn_ENTITY();
     }
 
 }
 
 void SET_STATS() {
+    if (chosen_region == "Industrial Zone") { // 1
+        
+    }
 
+    else if (chosen_region == "Desolate Area") { //2
+        
+    }
+
+    else { //3 
+
+    }
+}
+
+void spawn_NPC() {
+    if (ENTITY_region == 1) {
+        cout << Randomizer(industrialZoneNPCs) << endl;
+    }
+
+    else if (ENTITY_region == 2) {
+        cout << Randomizer(desolateAreaNPCs) << endl;
+    }
+
+    else {
+        cout << Randomizer(peacefulVillageNPCs) << endl;
+    }
+}
+
+void spawn_ENTITY() {
+    if (ENTITY_region == 1) {
+        cout << Randomizer(industrialZoneEntities) << endl;
+    }
+
+    else if (ENTITY_region == 2) {
+        cout << Randomizer(desolateAreaEntities) << endl;
+    }
+
+    else {
+        cout << Randomizer(peacefulVillageEntities) << endl;
+    }
 }
 
 void compare_stats() {
