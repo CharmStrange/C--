@@ -63,6 +63,8 @@ vector<string> peacefulVillageNPCs = {
     "Cheerful Tavern Bard"
 };
 
+/// //// /////
+
 // Entities
 vector<string> industrialZoneEntities = {
     "Efficient Worker Drone",

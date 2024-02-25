@@ -79,7 +79,7 @@ void user_start(char alphabet) {
 void START_GAME() {
     // use GAME_ALGORITHM.h
     cout << "\nThe game started." << endl;
-    CHOOOSE_JOB();
+    INITIALIZE_SET();
 }
 
 // N
