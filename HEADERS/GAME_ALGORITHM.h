@@ -6,6 +6,7 @@
 # include <random>
 # include <ctime>
 
+# include "MAIN.h"
 # include "JOBS.h"
 
 using namespace std;
@@ -32,7 +33,7 @@ void spawn_ENTITY();
 
 // BEGIN.h
 void INITIALIZE_SET() {
-    cout << "There are 3 regions, 'Industrial Zone', 'Desolate Area', 'Peaceful Village'." << endl;
+    cout << "\nThere are 3 regions, 'Industrial Zone', 'Desolate Area', 'Peaceful Village'." << endl;
     cout << "Choose what you want - " << endl;
     cout << "[1] : 'Industrial Zone' \n[2] : 'Desolate Area' \n[3] : 'Peaceful Village'\n :";
     cin >> region;
@@ -44,6 +45,7 @@ void INITIALIZE_SET() {
         for (const string& index : industrialZoneJobs) {
             cout << "\n" << index << endl;
         }
+        cout << endl;
 
         spawn_NPC();
         spawn_ENTITY();
@@ -56,6 +58,7 @@ void INITIALIZE_SET() {
         for (const string& index : desolateAreaJobs) {
             cout << "\n" << index << endl;
         }
+        cout << endl;
 
         spawn_NPC();
         spawn_ENTITY();
@@ -68,6 +71,7 @@ void INITIALIZE_SET() {
         for (const string& index : peacefulVillageJobs) {
             cout << "\n" << index << endl;
         }
+        cout << endl;
 
         spawn_NPC();
         spawn_ENTITY();
@@ -91,28 +95,34 @@ void SET_STATS() {
 
 void spawn_NPC() {
     if (ENTITY_region == 1) {
+        cout << "\nSpawned random NPC : ";
         cout << Randomizer(industrialZoneNPCs) << endl;
     }
 
     else if (ENTITY_region == 2) {
+        cout << "\nSpawned random NPC : ";
         cout << Randomizer(desolateAreaNPCs) << endl;
     }
 
     else {
+        cout << "\nSpawned random NPC : ";
         cout << Randomizer(peacefulVillageNPCs) << endl;
     }
 }
 
 void spawn_ENTITY() {
     if (ENTITY_region == 1) {
+        cout << "\nSpawned random ENTITY : ";
         cout << Randomizer(industrialZoneEntities) << endl;
     }
 
     else if (ENTITY_region == 2) {
+        cout << "\nSpawned random ENTITY : ";
         cout << Randomizer(desolateAreaEntities) << endl;
     }
 
     else {
+        cout << "\nSpawned random ENTITY : ";
         cout << Randomizer(peacefulVillageEntities) << endl;
     }
 }
