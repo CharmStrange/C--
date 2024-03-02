@@ -10,8 +10,10 @@
 
 using namespace std;
 
+
+void compare_stats();
 void versus(const string& player, const string& ENTITY) {
-    
+    compare_stats();
 }
 
 #endif

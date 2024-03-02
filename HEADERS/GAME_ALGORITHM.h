@@ -128,7 +128,7 @@ void spawn_ENTITY() {
 }
 
 void compare_stats() {
-
+    cout << endl;
 }
 
 // MAIN.h
