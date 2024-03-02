@@ -11,21 +11,31 @@
 
 using namespace std;
 
-unsigned short region;
+unsigned char region;
 string chosen_region;
 
-unsigned short job;
+unsigned char job;
 string chosen_job;
 
-unsigned short ENTITY_region;
+unsigned char ENTITY_region;
 
 string Randomizer(const vector<string>& string_container) {
     mt19937 rng(time(nullptr));
     uniform_int_distribution<int> dist(0, string_container.size() - 1);
 
-    unsigned short Random_Index = dist(rng);
+    unsigned char Random_Index = dist(rng);
     return string_container[Random_Index];
 }
+
+class STAT {
+public:
+    unsigned char A;
+    unsigned char B;
+    unsigned char C;
+    unsigned char D;
+    unsigned char E;
+
+};
 
 // F.D.
 void spawn_NPC();
