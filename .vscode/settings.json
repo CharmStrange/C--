@@ -49,6 +49,7 @@
         "xtree": "cpp",
         "map": "cpp",
         "thread": "cpp",
-        "mutex": "cpp"
+        "mutex": "cpp",
+        "fstream": "cpp"
     }
 }

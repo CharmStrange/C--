@@ -1,5 +1,5 @@
 ### What is it
-Small developing project using C++, concept is Text Game.
+Small developing project using C++.
 
 ### Algorithm of this project
 #### Focusing on:
