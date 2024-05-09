@@ -1,9 +1,9 @@
 #ifndef File_Managing_h
 # define File_Managing_h
 
-#include <iostream>
-#include <fstream>
-#include <string>
+# include <iostream>
+# include <fstream>
+# include <string>
 
 using namespace std;
 

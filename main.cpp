@@ -3,6 +3,7 @@
 #include <string>
 
 #include "Headers/File_Managing.h"
+#include "Headers/Simulations.h"
 
 using namespace std;
 
