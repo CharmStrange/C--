@@ -15,7 +15,16 @@ public:
     ~Function(){}
 };
 
+struct manager{
+    string name;
+    unsigned char age;
+    unsigned char power;
+}manager;
+
 class Aquarium{
+    string fish;
+    string not_fish;
+    struct manager information;
 private:
 public:
     Aquarium(){}
@@ -23,6 +32,9 @@ public:
 };
 
 class Zoo{
+    unsigned char state;
+    string animal;
+    struct manager information;
 private:
 public:
     Zoo(){}
