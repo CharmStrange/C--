@@ -51,4 +51,17 @@ public:
     ~Farm(){}
 };
 
+void Simulate_Aquarium(const struct manager& parameter){
+
+}
+
+void Simulate_Zoo(const struct manager& parameter){
+
+}
+
+void Simulate_Farm(const struct manager& parameter){
+
+}
+
+
 #endif
