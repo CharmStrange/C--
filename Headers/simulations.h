@@ -42,6 +42,9 @@ public:
 };
 
 class Farm{
+    unsigned char state;
+    string crop;
+    struct manager information;
 private:
 public:
     Farm(){}
