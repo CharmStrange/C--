@@ -1,1 +1,1 @@
-이 폴더는 별개의 폴더입니다.
+Unrelated directory for [CustomDB]()
