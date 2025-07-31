@@ -1,6 +1,9 @@
 #include <iostream>
+#include "repl.h"
+
 using namespace std;
 
 int main(void){
-  return 0;
+    repl();
+  	return 0;
 }
