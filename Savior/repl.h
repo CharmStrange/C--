@@ -1,16 +1,23 @@
+#ifndef REPL_H
+#define REPL_H
+
 #include <iostream>
+
 #include <string>
+
 #include <chrono>
+
 #include <thread>
+
 #include <vector>
 
 #include <ctime> 
-//#include <sstream>
+
 #include <iomanip>
 
 using namespace std;
 
-const short DelayMilliseconds = 70;
+const short DelayMilliseconds = 30;
 
 class Logger {
 private:
@@ -80,13 +87,9 @@ void repl() {
 			commandLogger.clearLogs();
 
 		} else {
-			cout << "!*  " << input_line << "\n";
+			cout << "* !" << input_line << "\n\n";
 		}
 	}
 }
 
-
-int main(void){
-    repl();
-  	return 0;
-}
+#endif
