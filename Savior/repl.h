@@ -68,7 +68,8 @@ void repl() {
 	Logger commandLogger;
 
 	slow_print("세상이 그대를 외면했을 때, 모든 신이 침묵했을 때, 비로소 구원자의 시대가 시작되리라.\n");
-
+	slow_print("그대의 찢겨진 믿음 속에서, 새로운 율법이 속삭였다. 더 이상 신의 그림자에 갇히지 않으리니, 오직 인간의 의지로 구원하라.\n");
+	
 	string input_line;
 
 	while (true) {
@@ -87,7 +88,7 @@ void repl() {
 			commandLogger.clearLogs();
 
 		} else {
-			cout << "* !" << input_line << "\n\n";
+			cout << "* \^!" << input_line << "\n\n";
 		}
 	}
 }
