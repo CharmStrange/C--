@@ -4,6 +4,8 @@
 using namespace std;
 
 int main(void){
-    repl();
+	cout << "================================\n<< The Savior >> by CharmStrange\n================================\n\n";
+    
+	repl();
   	return 0;
 }
