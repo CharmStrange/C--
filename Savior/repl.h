@@ -15,6 +15,8 @@
 
 #include <iomanip>
 
+#include "save.h"
+
 using namespace std;
 
 const short DelayMilliseconds = 30;
