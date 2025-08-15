@@ -12,7 +12,7 @@
 using namespace std;
 using namespace tinyxml2;
 
-// 저장할 변수들 (예시)
+// 저장할 변수들 : PLAYER_H
 struct SaveData {
 	string name;
 	unsigned short energy;
@@ -21,7 +21,7 @@ struct SaveData {
 	unsigned short power;
 };
 
-// 세이브 데이터를 XML로 저장하는 함수
+// 데이터를 XML 로 
 void Save(const SaveData& data) {
     XMLDocument doc;
 
@@ -33,21 +33,30 @@ void Save(const SaveData& data) {
         doc.InsertFirstChild(root);
 
         // 데이터 저장
-        XMLElement* levelElement = doc.NewElement("Level");
-        levelElement->SetText(data.level);
-        root->InsertEndChild(levelElement);
-
         XMLElement* nameElement = doc.NewElement("Name");
         nameElement->SetText(data.name.c_str());
         root->InsertEndChild(nameElement);
 
-        XMLElement* healthElement = doc.NewElement("Health");
-        healthElement->SetText(data.health);
-        root->InsertEndChild(healthElement);
+        XMLElement* energyElement = doc.NewElement("Energy");
+        energyElement->SetText(data.energy);
+        root->InsertEndChild(energyElement);
+
+        XMLElement* faithElement = doc.NewElement("Faith");
+        faithElement->SetText(data.faith);
+        root->InsertEndChild(faithElement);
+
+        XMLElement* rageElement = doc.NewElement("Rage");
+        rageElement->SetText(data.rage);
+        root->InsertEndChild(rageElement);
+
+        XMLElement* powerElement = doc.NewElement("Power");
+        powerElement->SetText(data.power);
+        root->InsertEndChild(powerElement);
 
         // 파일로 저장
         doc.SaveFile("save.xml");
-        cout << "새 세이브 파일이 생성되었습니다!" << endl;
+        cout << "새 파일 생성 완료." << endl;
+        // 종료 알고리즘 추가해야 함
     }
     else {
         // 이미 존재하는 세이브 파일을 읽어오기
@@ -55,19 +64,25 @@ void Save(const SaveData& data) {
 
         XMLElement* root = doc.FirstChildElement("GameSave");
         if (root) {
-            XMLElement* levelElement = root->FirstChildElement("Level");
             XMLElement* nameElement = root->FirstChildElement("Name");
-            XMLElement* healthElement = root->FirstChildElement("Health");
+            XMLElement* energyElement = root->FirstChildElement("Energy");
+            XMLElement* faithElement = root->FirstChildElement("Faith");
+            XMLElement* rageElement = root->FirstChildElement("Rage");
+            XMLElement* powerElement = root->FirstChildElement("Power");
 
-            if (levelElement && nameElement && healthElement) {
-                int level = levelElement->IntText();
+            if (nameElement && energyElement && faithElement && rageElement && powerElement) {
                 string name = nameElement->GetText();
-                float health = healthElement->FloatText();
+                unsigned short energy = energyElement->UnsignedText();
+                short faith = faithElement->IntText();
+                unsigned short rage = rageElement->UnsignedText();
+                unsigned short power = powerElement->UnsignedText();
 
                 cout << "세이브 데이터 읽기: " << endl;
-                cout << "Level: " << level << endl;
-                cout << "Name: " << name << endl;
-                cout << "Health: " << health << endl;
+                cout << "이름: " << name << endl;
+                cout << "에너지: " << energy << endl;
+                cout << "신앙도: " << faith << endl;
+                cout << "분노: " << rage << endl;
+                cout << "힘: " << power << endl;
             }
         }
     }
