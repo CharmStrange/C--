@@ -1,5 +1,5 @@
-#ifndef PHENOMENON_H
-#define PHENOMENON_H
+#ifndef PHENOMENA_H
+#define PHENOMENA_H
 
 #include <iostream>
 
