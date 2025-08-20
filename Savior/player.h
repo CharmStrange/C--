@@ -10,6 +10,8 @@
 
 #include <vector>
 
+#include "phnomena.h"
+
 using namespace std;
 
 class Player {
@@ -31,6 +33,14 @@ public:
         cout << "Rage: " << rage << "\n";
         cout << "Power: " << power << "\n";
         cout << "---------------------\n\n";
+	}
+	
+	unsigned short extract(const string& name, const string& type, unsigned short number) {
+		
+	}
+	
+	void encounter(Phenomenon* phenomenon) {
+		
 	}
 	
 };
