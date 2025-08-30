@@ -17,6 +17,8 @@
 
 #include "save.h"
 
+#include "space.h"
+
 using namespace std;
 
 //const short DelayMilliseconds = 30;
@@ -91,63 +93,147 @@ void verbuming(const string& verbum){
 }
 
 void repl() {
-	Logger commandLogger;
-	
-	verbuming(verbum1); // 시작의 첫 구절
-	
-	string input_line;
-	string tmp;
+    Logger commandLogger;
+    string input_line;
 
-	while (true) {
-		cout << "* ";
-		getline(cin, input_line); // 입력 받기
-		commandLogger.addLog(input_line);
+    slow_print(verbum1, 30); // 게임 시작 대사
 
-		if (input_line == "제 삶의 모든 숨결이 당신의 뜻을 향하기를, 오직 당신의 빛만이 저를 이끌게 하소서." || input_line == "종료") {
-			slow_print("아멘\n", 50);
-			break;
-			
-		// 분기 진행 알고리즘
-		} else if (input_line == "") {
-			verbuming(verbum2);
-			cout << "\n\"...이건\"\n\n";
-			verbuming(verbum3);
-			
-			slow_print("\'믿음의 변질\'\n\n", 50);
-			
-			slow_print("\'분노의 찬송\'\n\n", 50);
-			
-			slow_print("\'인간성의 선언\'\n\n", 50);
-			
-			slow_print("\"...어떤 것을,\"\n\n", 30);
-			cout << "* ";
-			getline(cin, tmp);
-			commandLogger.addLog(tmp);
-			
-			if (tmp == "믿음의 변질") { verbuming(verbum4); } // 1
-			else if (tmp == "분노의 찬송") { verbuming(verbum5); } // 2
-			else if (tmp == "인간성의 선언") { verbuming(verbum6); } // 3
-			else { slow_print("\n그대는 어떤 것도 읽고 싶지 않았다.\n멀리서 미약한 신자들의 목소리가 들려온다.\n\n\"제 삶의 모든 숨결이 당신의 뜻을 향하기를, 오직 당신의 빛만이 저를 이끌게 하소서.\"\n\n", 40); slow_print("...아멘\n<< The Savior >> by CharmStrange\n", 70); break;}
-			
-	    } else if (input_line == "1") {
-			// 분기 1
-						
-		} else if (input_line == "2") {
-			// 분기 2
-						
-		} else if (input_line == "3") {
-			// 분기 3
-						
-		} else if (input_line == "기록") {
-			commandLogger.showLogs();
+    while (true) {
+        cout << "* ";
+        getline(cin, input_line);
+        commandLogger.addLog(input_line);
 
-		} else if (input_line == "기록 삭제") {
-			commandLogger.clearLogs();
+        if (input_line.empty()) {
+            slow_print(verbum2, 30);
+            cout << "\n\"...이건\"\n\n";
+            slow_print(verbum3, 30);
 
-		} else {
-			cout << "* \^! " << input_line << "\n\n";
-		}
-	}
+            slow_print("\'믿음의 변질\'\n\n", 50);
+            slow_print("\'분노의 찬송\'\n\n", 50);
+            slow_print("\'인간성의 선언\'\n\n", 50);
+
+            cout << "* 어떤 것을 읽겠는가?\n";
+            cout << "* ";
+
+            string tmp;
+            getline(cin, tmp);
+            commandLogger.addLog(tmp);
+            
+            if (tmp == "믿음의 변질") { // 회의의 성소 
+                slow_print(verbum4, 30);
+                // 믿음의 변질 분기 스토리를 여기에 추가
+				Space Sanctuary_of_Doubt("회의의 성소", "한때 순례자들이 모여들었던 '빛의 성소'.\n그러나 지금은 벽면을 따라 알 수 없는 언어의 낙서가 가득하고, 천장에서는 불경한 소리가 울려 퍼진다.\n성소의 신성한 힘은 사라지고, '거짓된 예언' 현상이 성소 전체를 뒤덮고 있다.\n");
+				
+				Phenomenon phenomenon1_space1("진실의 그림자", "Spectral", 1, 10, 20, 5, 10); 
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon1_space1);
+				
+        		Phenomenon phenomenon2_space1("속삭이는 성가대", "Illusion", 2, 5, 30, 0, 15); 
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon2_space1);
+				
+        		Phenomenon phenomenon3_space1("뒤틀린 묵상자", "Illusion", 3, 25, 15, 10, 20);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon3_space1);
+				
+        		Phenomenon phenomenon4_space1("기만의 사제", "Spectral", 4, 15, 10, 5, 25);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon4_space1);
+				
+        		Phenomenon phenomenon5_space1("고백의 거울", "Illusion", 5, 5, -10, 15, 10);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon5_space1);
+				
+        		Phenomenon phenomenon6_space1("성물의 파수꾼", "Guardian", 6, 40, 30, 10, 30);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon6_space1);
+				
+        		Phenomenon phenomenon7_space1("회개의 눈물", "Illusion", 7, 5, 25, 5, 10);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon7_space1);
+				
+        		Phenomenon phenomenon8_space1("성스러운 거짓기말", "Illusion", 8, 1, 10, 0, 5);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon8_space1);
+				
+        		Phenomenon phenomenon9_space1("불신의 사도", "Spectral", 9, 30, -20, 20, 35);
+				Sanctuary_of_Doubt.phenomena_space.push_back(&phenomenon9_space1);
+								
+            } else if (tmp == "분노의 찬송") { // 증오의 지하 성당 
+                slow_print(verbum5, 30);
+                // 분노의 찬송 분기 스토리를 여기에 추가
+				Space Chantry_of_Hatred("증오의 지하 성당", "겉보기에는 평범한 성당이지만, 지하로 내려가면 무고한 희생자들이 갇혀있던 감옥과 탐욕의 흔적들이 남아있다.");
+				
+				Phenomenon phenomenon1_space2("타락한 기사", "Corrupted", 10, 50, -10, 30, 40);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon1_space2);
+				
+        		Phenomenon phenomenon2_space2("탐욕의 수호자", "Beast", 11, 45, -20, 40, 50);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon2_space2);
+				
+        		Phenomenon phenomenon3_space2("쇠사슬 속박자", "Corrupted", 12, 35, -5, 25, 30);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon3_space2);
+				
+        		Phenomenon phenomenon4_space2("부패한 사제", "Corrupted", 13, 30, -15, 30, 45);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon4_space2);
+				
+        		Phenomenon phenomenon5_space2("피의 맹신자", "Corrupted", 14, 20, 10, 50, 40);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon5_space2);
+				
+        		Phenomenon phenomenon6_space2("분노의 망령", "Spirit", 15, 25, -20, 60, 55);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon6_space2);
+				
+        		Phenomenon phenomenon7_space2("배신의 짐승", "Beast", 16, 60, -30, 50, 60);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon7_space2);
+				
+        		Phenomenon phenomenon8_space2("이단자의 심장", "Beast", 17, 70, -40, 50, 70);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon8_space2);
+				
+        		Phenomenon phenomenon9_space2("공허한 복수자", "Spirit", 18, 55, -35, 70, 65);
+				Chantry_of_Hatred.phenomena_space.push_back(&phenomenon9_space2);
+								
+            } else if (tmp == "인간성의 선언") { // 재림의 첨탑
+                slow_print(verbum6, 30);
+                // 인간성의 선언 분기 스토리를 여기에 추가
+				Space Spire_of_Rebirth("재림의 첨탑", "구름을 뚫고 솟아 있는 거대한 첨탑.\n첨탑의 꼭대기에는 '신성한 힘'이 봉인되어 있던 제단이 있다.");
+				
+				Phenomenon phenomenon1_space3("신의 파편", "Celestial", 19, 80, 80, 0, 75);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon1_space3);
+				
+        		Phenomenon phenomenon2_space3("공허한 천사", "Celestial", 20, 70, 60, 10, 80);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon2_space3);
+				
+        		Phenomenon phenomenon3_space3("옛 성자의 망령", "Manifestation", 21, 90, 50, 50, 90);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon3_space3);
+				
+        		Phenomenon phenomenon4_space3("운명의 매듭", "Abomination", 22, 50, 0, 70, 70);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon4_space3);
+				
+        		Phenomenon phenomenon5_space3("아포스타시의 거상", "Abomination", 23, 120, -10, 80, 100);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon5_space3);
+				
+        		Phenomenon phenomenon6_space3("마지막 기도", "Celestial", 24, 60, 90, 0, 85);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon6_space3);
+				
+        		Phenomenon phenomenon7_space3("성장의 허상", "Manifestation", 25, 40, 40, 40, 70);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon7_space3);
+				
+        		Phenomenon phenomenon8_space3("새로운 율법의 거울", "Manifestation", 26, 85, 0, 90, 95);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon8_space3);
+				
+        		Phenomenon phenomenon9_space3("천상의 종말", "Abomination", 27, 200, 100, 100, 150);
+				Spire_of_Rebirth.phenomena_space.push_back(&phenomenon9_space3);
+								
+            } else {
+                slow_print("\n그대는 어떤 것도 읽고 싶지 않았다.\n", 40);
+            }
+        
+        } else if (input_line == "종료" || input_line == "제 삶의 모든 숨결이 당신의 뜻을 향하기를, 오직 당신의 빛만이 저를 이끌게 하소서.") {
+            slow_print("...아멘\n", 50);
+            slow_print("<< The Savior >> by CharmStrange\n", 70);
+            break;
+        
+        } else if (input_line == "기록") {
+            commandLogger.showLogs();
+
+        } else if (input_line == "기록 삭제") {
+            commandLogger.clearLogs();
+
+        } else {
+            cout << "* ^! " << input_line << "\n\n";
+        }
+    }
 }
 
 #endif
