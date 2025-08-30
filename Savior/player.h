@@ -1,16 +1,13 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#define FaithThreshold 0
-#define rageThreshold 0
-
 #include <iostream>
 
 #include <string>
 
 #include <vector>
 
-#include "phnomena.h"
+#include "phenomena.h"
 
 using namespace std;
 
@@ -35,13 +32,7 @@ public:
         cout << "---------------------\n\n";
 	}
 	
-	unsigned short extract(const string& name, const string& type, unsigned short number) {
-		
-	}
-	
-	void encounter(Phenomenon* phenomenon) {
-		
-	}
+	unsigned short extract(const string& name, const string& type, unsigned short number) {}
 	
 };
 
